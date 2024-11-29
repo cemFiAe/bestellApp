@@ -45,8 +45,8 @@ function renderCart() {
 
     // Update cart summary in the DOM
     document.getElementById('cartSummary').innerHTML = `
-        <p>Total items: ${totalAmount}</p>
-        <p>Total price: ${totalPrice.toFixed(2)}€</p>
+        <p>Anzahl Gerichte Insgesamt: ${totalAmount}</p>
+        <p>Gesamtpreis: ${totalPrice.toFixed(2)}€</p>
     `;
 }
 
@@ -55,15 +55,18 @@ function getCartTemplates(i) {
     const item = myCart[i];
     return /*html*/ `
         <div class="cart-item">
-            <h3>${item.name}</h3>
-            <p>Price per item: ${item.price.toFixed(2)}€</p>
-            <p>Total: ${(item.price * item.quantity).toFixed(2)}€</p>
-            <div class="quantity-controls">
-                <button onclick="decreaseQuantity(${i})">-</button>
-                <p>${item.quantity}</p>
-                <button onclick="increaseQuantity(${i})">+</button>
-                <img src="./images/img/bin.png" alt="bin" onclick="deleteFromCart()">
-            </div>
+                <div class="cart-single-item">
+                    <h3>${item.name}</h3>
+                    <p>Preis pro Gericht: ${item.price.toFixed(2)}€</p>
+                    <p>Total: ${(item.price * item.quantity).toFixed(2)}€</p>
+                </div>
+
+                <div class="quantity-controls">
+                    <button onclick="decreaseQuantity(${i})">-</button>
+                    <p>${item.quantity}</p>
+                    <button onclick="increaseQuantity(${i})">+</button>
+                    <img src="./images/img/bin.png" alt="bin" onclick="deleteFromCart()">
+                </div>
         </div>
     `;
 }

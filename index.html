@@ -14,6 +14,7 @@
 <body onload="init()">
     <div class="header">
         <img src="./images/Logo/Logo.png" alt="">
+        <img onclick="toggleCart()" src="./images/img/warenkorb.png" alt="" id="responsive-image">
     </div>
     <div class="main_left_and_right_container">
     <div class="main_container"> 
@@ -31,17 +32,19 @@
     
 </div>
 </div>
-<div class="basket">
+<div class="basket" id="basket">
     <div class="inner_basket">
-        <div class="inner_basket_h2_container">
+        <div class="inner_basket_h2_container" onclick="toggleCart()">
             <div class="inner_basket_h2"><h2>Warenkorb</h2></div>
         </div>
-        <div class="inner_basket_dishes" id="inner_basket_dishes">
-
-        </div>
-        <div id="cartSummary" class="cartSummary">
-            <p>Total items: 0</p>
-            <p>Total price: 0.00€</p>
+        <div class="inner_basket_container" id="inner_basket_container">
+            <div class="inner_basket_dishes" id="inner_basket_dishes">
+            </div>
+            
+            <div id="cartSummary" class="cartSummary">
+                <p>Anzahl Gerichte Insgesamt: 0</p>
+                <p>Gesamtpreis: 0.00€</p>
+            </div>
         </div>
     </div>
 </div>

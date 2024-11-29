@@ -61,3 +61,7 @@ function decreaseQuantity(index) {
     setCartLocalStorage(); // Persist the updated cart
     renderCart(); // Re-render the cart and summary
 }
+
+function toggleCart(){
+    document.getElementById('basket').classList.toggle('inner_basket_closed');
+}
